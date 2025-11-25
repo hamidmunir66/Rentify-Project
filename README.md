@@ -1,16 +1,29 @@
-# React + Vite
+Rentify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Rentify is a modern peer-to-peer rental marketplace web application built with React.js and Tailwind CSS. It allows users to rent items like electronics, furniture, cameras, bikes, and more, while owners can list their products for rent. The platform is designed to be responsive, user-friendly, and secure, offering a seamless experience for both renters and owners.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+User Dashboard: Browse, search, and rent items from different categories.
 
-## React Compiler
+Owner Dashboard: List, manage, and track rented items.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Secure Authentication: Login and registration with CNIC verification.
 
-## Expanding the ESLint configuration
+Location-Based Listings: Find items available nearby.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Responsive UI: Works flawlessly across devices with modern design.
+
+Categorized Listings: Items organized for easy navigation.
+
+Technologies Used
+
+Frontend: React.js, Tailwind CSS
+
+State Management: React Context / Redux (if used)
+
+Routing: React Router
+
+Forms & Validation: React Hook Form / Custom Validation
+
+Deployment: (Add your deployment platform e.g., Vercel, Netlify)
