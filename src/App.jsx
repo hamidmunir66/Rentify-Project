@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 
 // Layouts
 import UserLayout from './Component/user/Layout/UserLayout'
@@ -12,28 +12,23 @@ import Login from './Component/auth/Login'
 import ChooseSignup from './Component/auth/ChooseSignup'
 import UserSignup from './Component/auth/UserSignup'
 import MerchantSignup from './Component/auth/MerchantSignup'
-import About from "./pages/About";
-
-
-
+import About from './pages/About'
 
 const App = () => {
   return (
     <div>
-
       <Routes>
-
         {/* ========== PUBLIC / AUTH ROUTES ========== */}
-        <Route path='/about' element={<About />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/ChooseSignup' element={<ChooseSignup />} />
-        <Route path='/signup/user' element={<UserSignup />} />
-        <Route path='/signup/merchant' element={<MerchantSignup />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/choose-signup" element={<ChooseSignup />} />
+        <Route path="/signup/user" element={<UserSignup />} />
+        <Route path="/signup/merchant" element={<MerchantSignup />} />
 
         {/* ========== USER LAYOUT ROUTES ========== */}
 
         <Route element={<UserLayout />}>
-          <Route path='/' element={<UserHome />} />
+          <Route path="/" element={<UserHome />} />
         </Route>
       </Routes>
     </div>

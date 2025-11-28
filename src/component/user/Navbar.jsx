@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faAngleDown,
   faAngleRight,
@@ -8,23 +8,19 @@ import {
   faUser,
   faSearch,
   faXmark,
-} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import categories from "../../API/Catogories";
+} from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
+import {categories} from '../../data/data'
 
 const Navbar = () => {
-  const [openDropdown, setOpenDropdown] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false)
+  const [openMenu, setOpenMenu] = useState(false)
 
   return (
     <div className="w-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.07)] rounded-xl px-8 py-4">
-
-      {/* Main navbar container */}
       <div className="flex items-center justify-between">
-
         {/* LEFT SECTION (Logo + Menu Items) */}
         <div className="flex items-center gap-10">
-
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer">
             <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,255,0.3)]">
@@ -39,7 +35,7 @@ const Navbar = () => {
               onClick={() => setOpenDropdown(!openDropdown)}
               className="flex items-center gap-2 cursor-pointer text-gray-700 hover:text-blue-600 transition-all font-medium"
             >
-              Categories{" "}
+              Categories{' '}
               <FontAwesomeIcon
                 icon={openDropdown ? faAngleDown : faAngleRight}
                 className="transition-transform duration-300"
@@ -71,10 +67,7 @@ const Navbar = () => {
 
           {/* Search Bar */}
           <div className="hidden md:flex items-center bg-gray-100 px-4 py-2 rounded-xl shadow-inner border border-gray-200 w-72">
-            <FontAwesomeIcon
-              icon={faSearch}
-              className="text-gray-500 text-sm"
-            />
+            <FontAwesomeIcon icon={faSearch} className="text-gray-500 text-sm" />
             <input
               type="text"
               placeholder="Search items..."
@@ -85,7 +78,6 @@ const Navbar = () => {
 
         {/* RIGHT SECTION */}
         <div className="hidden md:flex items-center gap-8">
-
           {/* Inbox */}
           <FontAwesomeIcon
             icon={faInbox}
@@ -114,7 +106,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

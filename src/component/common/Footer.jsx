@@ -1,9 +1,9 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faFacebookF, faTwitter, faInstagram,} from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -21,14 +21,11 @@ const Footer = () => {
               <span className="flex items-center justify-center h-12 w-12 rounded-xl bg-linear-to-br from-indigo-500 to-blue-500 text-white text-lg font-semibold shadow-md ring-1 ring-white/10">
                 R
               </span>
-              <span className="text-xl font-semibold tracking-wide">
-                Rentify
-              </span>
+              <span className="text-xl font-semibold tracking-wide">Rentify</span>
             </div>
 
             <p className="text-slate-300 leading-relaxed">
-              Your trusted peer-to-peer rental marketplace. Rent anything,
-              anytime, near you.
+              Your trusted peer-to-peer rental marketplace. Rent anything, anytime, near you.
             </p>
 
             <div className="mt-2 inline-flex items-center gap-4">
@@ -48,10 +45,26 @@ const Footer = () => {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2 text-slate-300">
-              <li><Link to='/About' className="hover:text-white transition">About Us</Link></li>
-              <li><a href="#" className="hover:text-white transition">How It Works</a></li>
-              <li><a href="#" className="hover:text-white transition">Safety Tips</a></li>
-              <li><a href="#" className="hover:text-white transition">Trust & Safety</a></li>
+              <li>
+                <Link to="/About" className="hover:text-white transition">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition">
+                  How It Works
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition">
+                  Safety Tips
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition">
+                  Trust & Safety
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -59,10 +72,26 @@ const Footer = () => {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Categories</h3>
             <ul className="space-y-2 text-slate-300">
-              <li><a href="#" className="hover:text-white transition">Electronics</a></li>
-              <li><a href="#" className="hover:text-white transition">Vehicles</a></li>
-              <li><a href="#" className="hover:text-white transition">Cameras</a></li>
-              <li><a href="#" className="hover:text-white transition">Tools</a></li>
+              <li>
+                <a href="#" className="hover:text-white transition">
+                  Electronics
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition">
+                  Vehicles
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition">
+                  Cameras
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition">
+                  Tools
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -123,19 +152,21 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-6 pb-6 flex flex-col-reverse lg:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-sm">
-            © 2025 Rentify. All rights reserved.
-          </p>
+          <p className="text-slate-400 text-sm">© 2025 Rentify. All rights reserved.</p>
 
           <div className="flex items-center gap-4 text-slate-300 text-sm">
-            <a href="#" className="hover:text-white transition">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition">
+              Privacy Policy
+            </a>
             <span className="hidden sm:inline text-slate-500">•</span>
-            <a href="#" className="hover:text-white transition">Terms of Service</a>
+            <a href="#" className="hover:text-white transition">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

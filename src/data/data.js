@@ -1,5 +1,26 @@
+//browse catogories
 
-const featuredListings = [
+const BrowseCatogories =[
+{
+    id:1,
+    title:"Cameras",
+    
+}
+]
+
+export const categories = [
+  { id: 1, name: "Electronics", slug: "electronics" },
+  { id: 2, name: "Vehicles", slug: "vehicles" },
+  { id: 3, name: "Furniture", slug: "furniture" },
+  { id: 4, name: "Home Appliances", slug: "home-appliances" },
+  { id: 5, name: "Sports", slug: "sports" },
+  { id: 6, name: "Real Estate", slug: "real-estate" },
+];
+
+
+
+
+export const featuredListings = [
   {
     id: 1,
     title: "Canon EOS Camera",
@@ -42,5 +63,5 @@ const featuredListings = [
   }
 ];
 
-export default featuredListings;
+
 

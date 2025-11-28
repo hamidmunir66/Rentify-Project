@@ -1,8 +1,8 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faStore, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import BlobBackground from "../affects/BlobBackground";
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faStore, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
+import BlobBackground from '../affects/BlobBackground'
 
 const ChooseSignup = () => {
   return (
@@ -10,12 +10,10 @@ const ChooseSignup = () => {
       <BlobBackground />
 
       <div className="max-w-xl w-full bg-white/80 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-white/40 animate-fadeIn">
-        
         <h1 className="text-3xl font-bold text-center text-slate-800 mb-6">Create Your Account</h1>
         <p className="text-center text-slate-600 mb-10">Choose how you want to use Rentify</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
           {/* USER */}
           <Link
             to="/signup/user"
@@ -43,11 +41,10 @@ const ChooseSignup = () => {
             <p className="text-sm text-slate-600 mb-3">Earn by listing your services or items</p>
             <FontAwesomeIcon icon={faArrowRight} className="text-purple-600" />
           </Link>
-
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ChooseSignup;
+export default ChooseSignup

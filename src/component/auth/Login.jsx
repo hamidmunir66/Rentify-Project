@@ -1,34 +1,27 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faLock,
-  faEye,
-} from "@fortawesome/free-solid-svg-icons";
-import { faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faLock, faEye } from '@fortawesome/free-solid-svg-icons'
+import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-[#dce7ff] via-[#eef3ff] to-[#dce7ff] px-4 overflow-hidden relative">
-
       {/* Background Glows */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/40 blur-[120px] rounded-full"></div>
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-indigo-400/40 blur-[120px] rounded-full"></div>
 
       {/* CARD WRAPPER */}
       <div className="w-full max-w-5xl flex bg-white/70 backdrop-blur-2xl rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.20)] border border-white/40 overflow-hidden animate-fadeInUp">
-
         {/* LEFT SECTION */}
         <div className="hidden md:flex flex-col justify-center items-start w-1/2 px-12 py-16 bg-linear-to-br from-blue-600 to-blue-800 text-white relative">
-
           {/* Decorative Glow */}
           <div className="absolute top-0 right-0 w-40 h-40 bg-white/20 blur-[80px]"></div>
 
           {/* Welcome Content */}
           <h1 className="text-4xl font-bold drop-shadow-md">Welcome Back</h1>
           <p className="mt-4 text-lg text-blue-100">
-            Your renting journey continues —  
+            Your renting journey continues —
             <br />
             <span className="font-semibold">Connect. Rent. Earn.</span>
           </p>
@@ -39,15 +32,11 @@ const Login = () => {
           </p>
 
           {/* Illustration / Icon */}
-          <img
-            src="./images/3d-login.webp"
-            className="w-64 mt-10 drop-shadow-xl"
-          />
+          <img src="./images/3d-login.webp" className="w-64 mt-10 drop-shadow-xl" />
         </div>
 
         {/* RIGHT SECTION — FORM */}
         <div className="w-full md:w-1/2 p-10 animate-slideIn">
-
           {/* Logo */}
           <div className="flex items-center gap-3 mb-8">
             <div className="h-12 w-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-blue-300 border border-blue-400/40">
@@ -59,12 +48,8 @@ const Login = () => {
           </div>
 
           {/* Heading */}
-          <h2 className="text-3xl font-semibold text-slate-800 mb-2">
-            Sign In
-          </h2>
-          <p className="text-slate-500 mb-8">
-            To access your rentals and listings
-          </p>
+          <h2 className="text-3xl font-semibold text-slate-800 mb-2">Sign In</h2>
+          <p className="text-slate-500 mb-8">To access your rentals and listings</p>
 
           {/* Email field */}
           <div className="mb-5">
@@ -99,9 +84,7 @@ const Login = () => {
               <input type="checkbox" className="h-4 w-4" />
               <span className="text-slate-600 text-sm">Remember me</span>
             </div>
-            <a className="text-blue-600 text-sm hover:underline cursor-pointer">
-              Forgot password?
-            </a>
+            <a className="text-blue-600 text-sm hover:underline cursor-pointer">Forgot password?</a>
           </div>
 
           {/* Login Button */}
@@ -131,7 +114,7 @@ const Login = () => {
 
           {/* Signup */}
           <p className="text-center text-slate-600 mt-6">
-            Don't have an account?{" "}
+            Don't have an account?{' '}
             <a className="text-blue-600 font-medium hover:underline cursor-pointer">
               <Link to="/ChooseSignup">Sign up</Link>
             </a>
@@ -139,7 +122,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

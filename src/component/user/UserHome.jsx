@@ -6,12 +6,12 @@ import WhyChooseUs from '../common/WhyChooseUs'
 
 const UserHome = () => {
   return (
-    <div>
+    <>
       <Hero/>
       <BrowseCatogories/>
       <FeaturdListing/>
       <WhyChooseUs/>
-    </div>
+    </>
   )
 }
 
