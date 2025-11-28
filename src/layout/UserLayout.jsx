@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../Navbar'
-import Footer from '../../common/Footer'
+import Navbar from '../component/user/Navbar'
+import Footer from '../component/common/Footer'
 import { Outlet } from 'react-router-dom'
 
 const UserLayout = () => {
