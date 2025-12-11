@@ -7,11 +7,12 @@ import UserLayout from './layout/UserLayout'
 import UserHome from './pages/user/UserHome'
 
 // Auth Pages
+import About from './pages/user/About'
 import AccountType from './pages/auth/AccountType'
 import Login from './pages/auth/Login'
 import MerchantSignup from './pages/auth/MerchantSignup'
 import UserSignup from './pages/auth/UserSignup'
-import About from './pages/static/About'
+import MarketplacePage from './pages/user/MarketPlacePage'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
 
         <Route element={<UserLayout />}>
           <Route path="/" element={<UserHome />} />
+          <Route path="/marketplace" element={<MarketplacePage />} />
         </Route>
       </Routes>
     </div>

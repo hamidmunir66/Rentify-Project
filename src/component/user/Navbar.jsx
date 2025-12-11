@@ -10,7 +10,7 @@ import {
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
-import {categories} from '../../data/data'
+import { categories } from '../../data/data'
 
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(false)
@@ -47,7 +47,7 @@ const Navbar = () => {
                 {categories.map((cat) => (
                   <Link
                     key={cat.id}
-                    to={`/category/${cat.slug}`}
+                    to={`/marketplace?category=${cat.slug}`}
                     className="block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 text-gray-700 transition"
                   >
                     {cat.name}

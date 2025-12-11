@@ -1,7 +1,7 @@
 import { faArrowRight, faStore, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
-import BlobBackground from '../../component/ui/affects/BlobBackground'
+import BlobBackground from '../../component/ui/effects/BlobBackground'
 
 const ChooseSignup = () => {
   return (

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-[#dce7ff] via-[#eef3ff] to-[#dce7ff] px-4 overflow-hidden relative">
+    <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-  [#dce7ff] via-[#eef3ff] to-[#dce7ff] px-4 overflow-hidden relative">
       {/* Background Glows */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/40 blur-[120px] rounded-full"></div>
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-indigo-400/40 blur-[120px] rounded-full"></div>
