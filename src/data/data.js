@@ -1,13 +1,48 @@
 import { faLock, faHandHoldingHeart, faShield, faClock } from '@fortawesome/free-solid-svg-icons'
+import featuredcamera from '../assets/images/featured-camera.jpg'
+import featuredlaptop from '../assets/images/featured-laptop.avif'
+import { FaCar, FaMobileAlt, FaTools, FaCouch, FaFootballBall, FaHome } from 'react-icons/fa'
 
-//browse catogories
-
-const BrowseCatogories = [
+export const browseCategories = [
   {
     id: 1,
-    title: 'Cameras',
+    name: 'Electronics',
+    slug: 'electronics',
+    icon: FaMobileAlt,
+  },
+  {
+    id: 2,
+    name: 'Tools',
+    slug: 'tools',
+    icon: FaTools,
+  },
+  {
+    id: 3,
+    name: 'Vehicles',
+    slug: 'vehicles',
+    icon: FaCar,
+  },
+  {
+    id: 4,
+    name: 'Furniture',
+    slug: 'furniture',
+    icon: FaCouch,
+  },
+  {
+    id: 5,
+    name: 'Sports',
+    slug: 'sports',
+    icon: FaFootballBall,
+  },
+  {
+    id: 6,
+    name: 'Real Estate',
+    slug: 'real-estate',
+    icon: FaHome,
   },
 ]
+
+//browse catogories
 
 export const categories = [
   { id: 1, name: 'Electronics', slug: 'electronics' },
@@ -22,7 +57,7 @@ export const featuredListings = [
   {
     id: 1,
     title: 'Canon EOS Camera',
-    image: '/public/images/featured-camera.jpg',
+    image: featuredcamera,
     priceDay: 1200,
     priceWeek: 7500,
     location: 'Mumbai, Maharashtra',
@@ -32,7 +67,7 @@ export const featuredListings = [
   {
     id: 2,
     title: 'Sony Lens Kit',
-    image: '/public/images/featured-laptop.avif',
+    image: featuredlaptop,
     priceDay: 900,
     priceWeek: 6000,
     location: 'Delhi, India',
@@ -89,93 +124,87 @@ export const chooseUsData = [
 ]
 
 export const filtercategories = [
-  "All Categories",
-  "Electronics",
-  "Tools",
-  "Cameras",
-  "Vehicles",
-  "Furniture",
-  "Party Items"
-];
+  'All Categories',
+  'Electronics',
+  'Tools',
+  'Cameras',
+  'Vehicles',
+  'Furniture',
+  'Party Items',
+]
 
 export const cities = [
-  "",
-  "Mumbai, Maharashtra",
-  "Bangalore, Karnataka",
-  "Delhi, NCR",
-  "Hyderabad, Telangana",
-  "Chennai, Tamil Nadu"
-];
+  '',
+  'Mumbai, Maharashtra',
+  'Bangalore, Karnataka',
+  'Delhi, NCR',
+  'Hyderabad, Telangana',
+  'Chennai, Tamil Nadu',
+]
 
-export const conditions = [
-  "All",
-  "New",
-  "Like New",
-  "Used",
-  "Heavily Used"
-];
+export const conditions = ['All', 'New', 'Like New', 'Used', 'Heavily Used']
 
 export const priceRanges = [
-  { label: "Any", min: 0, max: 999999 },
-  { label: "Below 500", min: 0, max: 500 },
-  { label: "500 – 2000", min: 500, max: 2000 },
-  { label: "2000 – 5000", min: 2000, max: 5000 },
-  { label: "Above 5000", min: 5000, max: 999999 }
-];
+  { label: 'Any', min: 0, max: 999999 },
+  { label: 'Below 500', min: 0, max: 500 },
+  { label: '500 – 2000', min: 500, max: 2000 },
+  { label: '2000 – 5000', min: 2000, max: 5000 },
+  { label: 'Above 5000', min: 5000, max: 999999 },
+]
 
 export const categoriesProducts = [
   {
     id: 1,
-    name: "Canon EOS 1500D DSLR",
+    name: 'Canon EOS 1500D DSLR',
     price: 800,
-    city: "Mumbai, Maharashtra",
+    city: 'Mumbai, Maharashtra',
     rating: 4.7,
-    condition: "Like New",
-    image: "/images/canon.jpg", // put images in public/images
+    condition: 'Like New',
+    image: '/images/canon.jpg', // put images in public/images
   },
   {
     id: 2,
-    name: "Portable Generator 2kW",
+    name: 'Portable Generator 2kW',
     price: 600,
-    city: "Delhi, NCR",
+    city: 'Delhi, NCR',
     rating: 4.5,
-    condition: "Used",
-    image: "/images/generator.jpg",
+    condition: 'Used',
+    image: '/images/generator.jpg',
   },
   {
     id: 3,
-    name: "Nikon D5600 DSLR",
+    name: 'Nikon D5600 DSLR',
     price: 950,
-    city: "Bangalore, Karnataka",
+    city: 'Bangalore, Karnataka',
     rating: 4.8,
-    condition: "New",
-    image: "/images/nikon.jpg",
+    condition: 'New',
+    image: '/images/nikon.jpg',
   },
   {
     id: 4,
-    name: "DJI Mini Drone",
+    name: 'DJI Mini Drone',
     price: 1200,
-    city: "Hyderabad, Telangana",
+    city: 'Hyderabad, Telangana',
     rating: 4.9,
-    condition: "Like New",
-    image: "/images/drone.jpg",
+    condition: 'Like New',
+    image: '',
   },
   {
     id: 5,
-    name: "Electric Drill Machine",
+    name: 'Electric Drill Machine',
     price: 350,
-    city: "Chennai, Tamil Nadu",
+    city: 'Chennai, Tamil Nadu',
     rating: 4.3,
-    condition: "Used",
-    image: "/images/drill.jpg",
+    condition: 'Used',
+    image: '/images/drill.jpg',
   },
   {
     id: 6,
-    name: "Canon 50mm Lens",
+    name: 'Canon 50mm Lens',
     price: 450,
-    city: "Pune, Maharashtra",
+    city: 'Pune, Maharashtra',
     rating: 4.6,
-    condition: "New",
-    image: "/images/lens.jpg",
-  }
-];
+    condition: 'New',
+    image: { featuredcamera },
+  },
+]
