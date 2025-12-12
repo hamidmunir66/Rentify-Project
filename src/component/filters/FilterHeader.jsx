@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MerchantLayout = () => {
+const FilterHeader = () => {
   return (
     <>
       
@@ -8,4 +8,4 @@ const MerchantLayout = () => {
   )
 }
 
-export default MerchantLayout
+export default FilterHeader
