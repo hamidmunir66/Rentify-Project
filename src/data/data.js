@@ -2,6 +2,31 @@ import { faLock, faHandHoldingHeart, faShield, faClock } from '@fortawesome/free
 import featuredcamera from '../assets/images/featured-camera.jpg'
 import featuredlaptop from '../assets/images/featured-laptop.avif'
 import { FaCar, FaMobileAlt, FaTools, FaCouch, FaFootballBall, FaHome } from 'react-icons/fa'
+import {
+  FaHandshake,
+  FaShieldAlt,
+  FaRocket,
+  FaUsers,
+  FaStore,
+  FaGlobe,
+  FaCheckCircle,
+} from "react-icons/fa";
+
+import { FaUserPlus, FaSearch,  FaMoneyBillWave } from "react-icons/fa";
+import {
+  FaIdCard,
+  FaMoneyCheckAlt,
+  FaFileSignature,
+  FaUserShield,
+  FaMapMarkedAlt,
+} from "react-icons/fa";
+import {
+  FaUserCheck,
+  FaLock,
+  FaFileContract,
+  FaHeadset,
+} from "react-icons/fa";
+
 
 export const browseCategories = [
   {
@@ -208,3 +233,186 @@ export const categoriesProducts = [
     image: { featuredcamera },
   },
 ]
+
+export const aboutHighlights = [
+  {
+    icon: FaHandshake,
+    title: "Built on Trust",
+    text: "Verified users, transparent listings, and secure rental workflows.",
+  },
+  {
+    icon: FaRocket,
+    title: "Fast & Simple",
+    text: "List, rent, and connect instantly with a smooth experience.",
+  },
+  {
+    icon: FaShieldAlt,
+    title: "Secure Platform",
+    text: "Admin-controlled moderation and protected user data.",
+  },
+];
+
+export const roleDetails = [
+  {
+    icon: FaUsers,
+    text: "Users can rent items quickly from trusted merchants.",
+  },
+  {
+    icon: FaStore,
+    text: "Merchants earn by renting items or home-based assets.",
+  },
+  {
+    icon: FaShieldAlt,
+    text: "Admins ensure safety, quality, and fairness.",
+  },
+];
+
+export const whyRentify = [
+  "Earn without investment",
+  "Rent instead of buying",
+  "Local & verified listings",
+  "Modern UI & smooth experience",
+];
+
+export const vision = {
+  icon: FaGlobe,
+  title: "Our Vision",
+  text: "To build the most trusted rental ecosystem where people can earn, rent, and connect locally with confidence.",
+};
+
+export const checkIcon = FaCheckCircle;
+
+export const howItWorksSteps = [
+  {
+    id: 1,
+    title: "Create Your Account",
+    description:
+      "Sign up as a User or Merchant and unlock access to a smart rental ecosystem.",
+    icon: FaUserPlus,
+  },
+  {
+    id: 2,
+    title: "Browse or List Items",
+    description:
+      "Users discover rental items while merchants list products to earn effortlessly.",
+    icon: FaSearch,
+  },
+  {
+    id: 3,
+    title: "Rent & Connect",
+    description:
+      "Securely connect, verify details, and finalize rentals with confidence.",
+    icon: FaHandshake,
+  },
+  {
+    id: 4,
+    title: "Earn or Enjoy",
+    description:
+      "Merchants earn income while users enjoy rentals without heavy costs.",
+    icon: FaMoneyBillWave,
+  },
+];
+
+export const safetyTips = [
+  {
+    id: 1,
+    title: "Verify Identity",
+    description:
+      "Always verify CNIC or government-issued ID before renting or handing over items.",
+    icon: FaIdCard,
+  },
+  {
+    id: 2,
+    title: "Use Rentify Payments",
+    description:
+      "Avoid cash transactions. Always pay and receive payments through Rentify for protection.",
+    icon: FaMoneyCheckAlt,
+  },
+  {
+    id: 3,
+    title: "Sign Rental Agreement",
+    description:
+      "Ensure both parties sign a digital rental agreement covering duration, condition, and warranty.",
+    icon: FaFileSignature,
+  },
+  {
+    id: 4,
+    title: "Meet in Safe Locations",
+    description:
+      "Meet in public or verified locations recommended by Rentify to avoid risks.",
+    icon: FaMapMarkedAlt,
+  },
+  {
+    id: 5,
+    title: "Inspect Before Renting",
+    description:
+      "Check item condition carefully before accepting or handing over any product.",
+    icon: FaHandshake,
+  },
+  {
+    id: 6,
+    title: "Trust & Protection",
+    description:
+      "Rentify holds payments securely and assists in case of disputes or replacements.",
+    icon: FaUserShield,
+  },
+];
+
+export const safetyPromise = {
+  title: "Rentify Safety Promise",
+  text:
+    "Your trust matters. Rentify ensures identity verification, secure payments, digital agreements, and customer support to protect both renters and owners.",
+};
+
+export const trustSafetyFeatures = [
+  {
+    id: 1,
+    title: "Verified Users",
+    description:
+      "Every user and merchant must verify their CNIC and contact details before renting or listing items.",
+    icon: FaUserCheck,
+  },
+  {
+    id: 2,
+    title: "Secure Payments",
+    description:
+      "All payments are held securely by Rentify until the rental is completed successfully.",
+    icon: FaMoneyBillWave,
+  },
+  {
+    id: 3,
+    title: "Digital Agreements",
+    description:
+      "Rentify provides digital rental agreements that protect both renters and owners.",
+    icon: FaFileContract,
+  },
+  {
+    id: 4,
+    title: "Data Protection",
+    description:
+      "Your personal information is encrypted and protected using industry standards.",
+    icon: FaLock,
+  },
+  {
+    id: 5,
+    title: "Customer Support",
+    description:
+      "Our support team assists in disputes, replacements, and safety concerns.",
+    icon: FaHeadset,
+  },
+  {
+    id: 6,
+    title: "Fraud Prevention",
+    description:
+      "Advanced monitoring systems detect suspicious activity to keep the platform safe.",
+    icon: FaShieldAlt,
+  },
+];
+
+export const trustStatement = {
+  title: "Your Trust Is Our Priority",
+  text:
+    "Rentify is built on transparency, accountability, and security. Every rental is backed by verification, protection, and support.",
+};
+
+

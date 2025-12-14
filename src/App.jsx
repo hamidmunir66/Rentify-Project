@@ -13,6 +13,9 @@ import Login from "./pages/auth/Login";
 import MerchantSignup from "./pages/auth/MerchantSignup";
 import UserSignup from "./pages/auth/UserSignup";
 import MarketplacePage from "./pages/user/MarketPlacePage";
+import HowItWorks from "./pages/user/HowItWorks";
+import SafetyTips from "./pages/user/SafetyTips";
+import TrustSafety from "./pages/user/TrustSafety";
 
 const App = () => {
   return (
@@ -20,6 +23,9 @@ const App = () => {
       <Routes>
         {/* ========== PUBLIC / AUTH ROUTES ========== */}
         <Route path="/about" element={<About />} />
+        <Route path="/howitworks" element={<HowItWorks />} />
+        <Route path="/safetytips" element={<SafetyTips />} />
+        <Route path="/trust&safety" element={<TrustSafety />} />
         <Route path="/login" element={<Login />} />
         <Route path="/account-type" element={<AccountType />} />
         <Route path="/signup/user" element={<UserSignup />} />
