@@ -1,54 +1,67 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { categories } from "../../data/data";
-
-import { FiMenu, FiX, FiUser, FiInbox, FiSearch, FiChevronDown } from "react-icons/fi";
+import React, { useState, useRef, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { categories } from "../../data/data"
+import {
+  FiMenu,
+  FiX,
+  FiUser,
+  FiInbox,
+  FiSearch,
+  FiChevronDown,
+} from "react-icons/fi"
 
 const Navbar = () => {
-  const [openDropdown, setOpenDropdown] = useState(false);
-  const [openMobileMenu, setOpenMobileMenu] = useState(false);
-
-  const dropdownRef = useRef(null);
+  const [openDropdown, setOpenDropdown] = useState(false)
+  const [openMobileMenu, setOpenMobileMenu] = useState(false)
+  const dropdownRef = useRef(null)
 
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setOpenDropdown(false);
+        setOpenDropdown(false)
       }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
 
   const handleCategoryClick = () => {
-    setOpenDropdown(false);
-    setOpenMobileMenu(false);
-  };
+    setOpenDropdown(false)
+    setOpenMobileMenu(false)
+  }
 
   return (
     <>
-      {/* Navbar Main */}
       <div className="w-full bg-white shadow-lg rounded-xl px-6 py-4">
         <div className="flex items-center justify-between">
-
-          {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer">
-            <Link to="/" className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-md text-white font-bold text-lg">
+            <Link
+              to="/"
+              className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-md text-white font-bold text-lg"
+            >
               R
             </Link>
-            <Link to="/" className="text-2xl font-extrabold tracking-tight">Rentify</Link>
+            <Link
+              to="/"
+              className="text-2xl font-extrabold tracking-tight"
+            >
+              Rentify
+            </Link>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10">
-
-            {/* Categories Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <div
                 onClick={() => setOpenDropdown(!openDropdown)}
                 className="flex items-center gap-2 cursor-pointer text-gray-700 hover:text-blue-600 transition font-medium"
               >
-                Categories <FiChevronDown className={`${openDropdown && "rotate-180"} duration-300`} />
+                Categories
+                <FiChevronDown
+                  className={`duration-300 ${
+                    openDropdown ? "rotate-180" : ""
+                  }`}
+                />
               </div>
 
               {openDropdown && (
@@ -56,7 +69,7 @@ const Navbar = () => {
                   {categories.map((cat) => (
                     <Link
                       key={cat.id}
-                      to={`/marketplace?category=${cat.slug}`}
+                      to={`/market-place?category=${cat.slug}`}
                       onClick={handleCategoryClick}
                       className="block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 text-gray-700 transition"
                     >
@@ -67,11 +80,13 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link to="/" className="font-medium text-gray-700 hover:text-blue-600 transition">
+            <Link
+              to="/"
+              className="font-medium text-gray-700 hover:text-blue-600 transition"
+            >
               Home
             </Link>
 
-            {/* Search Bar */}
             <div className="flex items-center bg-gray-100 px-4 py-2 rounded-xl border border-gray-200 w-72">
               <FiSearch className="text-gray-500" />
               <input
@@ -82,9 +97,11 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop Icons */}
           <div className="hidden md:flex items-center gap-6">
-            <FiInbox className="text-xl cursor-pointer hover:text-blue-600 transition hover:scale-110" />
+            <Link to="/chat">
+              <FiInbox className="text-xl cursor-pointer hover:text-blue-600 transition hover:scale-110" />
+            </Link>
+
             <FiUser className="text-xl cursor-pointer hover:text-blue-600 transition hover:scale-110" />
 
             <Link
@@ -95,27 +112,30 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button className="md:hidden">
             {openMobileMenu ? (
-              <FiX className="text-3xl" onClick={() => setOpenMobileMenu(false)} />
+              <FiX
+                className="text-3xl"
+                onClick={() => setOpenMobileMenu(false)}
+              />
             ) : (
-              <FiMenu className="text-3xl" onClick={() => setOpenMobileMenu(true)} />
+              <FiMenu
+                className="text-3xl"
+                onClick={() => setOpenMobileMenu(true)}
+              />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Sidebar Menu */}
       {openMobileMenu && (
         <div className="fixed top-0 left-0 w-64 h-full bg-white shadow-2xl z-50 animate-slideIn p-6">
-
-          {/* Mobile Categories */}
           <h3 className="text-lg font-semibold mb-4">Categories</h3>
+
           {categories.map((cat) => (
             <Link
               key={cat.id}
-              to={`/marketplace?category=${cat.slug}`}
+              to={`/market-place?category=${cat.slug}`}
               onClick={handleCategoryClick}
               className="block px-3 py-2 rounded-lg hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition"
             >
@@ -125,18 +145,33 @@ const Navbar = () => {
 
           <hr className="my-4" />
 
-          {/* Other Links */}
-          <Link to="/" onClick={() => setOpenMobileMenu(false)} className="block py-2 text-gray-700 hover:text-blue-600">
+          <Link
+            to="/"
+            onClick={() => setOpenMobileMenu(false)}
+            className="block py-2 text-gray-700 hover:text-blue-600"
+          >
             Home
           </Link>
 
-          <Link to="/login" onClick={() => setOpenMobileMenu(false)} className="block py-3 mt-3 bg-blue-600 text-white text-center rounded-xl">
+          <Link
+            to="/chat"
+            onClick={() => setOpenMobileMenu(false)}
+            className="block py-2 text-gray-700 hover:text-blue-600"
+          >
+            Inbox
+          </Link>
+
+          <Link
+            to="/login"
+            onClick={() => setOpenMobileMenu(false)}
+            className="block py-3 mt-3 bg-blue-600 text-white text-center rounded-xl"
+          >
             Login
           </Link>
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

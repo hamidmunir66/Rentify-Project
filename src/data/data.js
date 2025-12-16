@@ -1,8 +1,31 @@
-import { faLock, faHandHoldingHeart, faShield, faClock } from '@fortawesome/free-solid-svg-icons'
-import featuredcamera from '../assets/images/featured-camera.jpg'
-import featuredlaptop from '../assets/images/featured-laptop.avif'
-import { FaCar, FaMobileAlt, FaTools, FaCouch, FaFootballBall, FaHome } from 'react-icons/fa'
 import {
+  faLock,
+  faHandHoldingHeart,
+  faShield,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
+import featuredcamera from "../assets/images/featured-camera.jpg";
+import featuredlaptop from "../assets/images/featured-laptop.avif";
+import heroslide1 from '../assets/images/heroslide1.jpg'
+import heroslide2 from '../assets/images/heroslide2.jpg'
+import heroslide3 from '../assets/images/heroslide3.jpg'
+import heroslide4 from '../assets/images/heroslide4.jpg'
+import heroslide5 from '../assets/images/heroslide5.avif'
+import {
+  FaUserCheck,
+  FaLock,
+  FaFileContract,
+  FaHeadset,
+  FaMapMarkerAlt,
+  FaStar,
+  FaIdCard,
+  FaMoneyCheckAlt,
+  FaFileSignature,
+  FaUserShield,
+  FaMapMarkedAlt,
+  FaUserPlus,
+  FaSearch,
+  FaMoneyBillWave,
   FaHandshake,
   FaShieldAlt,
   FaRocket,
@@ -10,229 +33,246 @@ import {
   FaStore,
   FaGlobe,
   FaCheckCircle,
+  FaCar,
+  FaMobileAlt,
+  FaTools,
+  FaCouch,
+  FaFootballBall,
+  FaHome,
+  FaUserCircle,
 } from "react-icons/fa";
 
-import { FaUserPlus, FaSearch,  FaMoneyBillWave } from "react-icons/fa";
-import {
-  FaIdCard,
-  FaMoneyCheckAlt,
-  FaFileSignature,
-  FaUserShield,
-  FaMapMarkedAlt,
-} from "react-icons/fa";
-import {
-  FaUserCheck,
-  FaLock,
-  FaFileContract,
-  FaHeadset,
-} from "react-icons/fa";
+const heroSlides = [
+  {
+    id: 1,
+    image: heroslide1,
+  },
+  {
+    id: 2,
+    image: heroslide2,
+  },
+  {
+    id: 3,
+    image: heroslide3,
+  },
+  {
+    id: 4,
+    image: heroslide4,
+  },
+  {
+    id: 5,
+    image: heroslide5,
+  },
+];
+
+export default heroSlides;
 
 
 export const browseCategories = [
   {
     id: 1,
-    name: 'Electronics',
-    slug: 'electronics',
+    name: "Electronics",
+    slug: "electronics",
     icon: FaMobileAlt,
   },
   {
     id: 2,
-    name: 'Tools',
-    slug: 'tools',
+    name: "Tools",
+    slug: "tools",
     icon: FaTools,
   },
   {
     id: 3,
-    name: 'Vehicles',
-    slug: 'vehicles',
+    name: "Vehicles",
+    slug: "vehicles",
     icon: FaCar,
   },
   {
     id: 4,
-    name: 'Furniture',
-    slug: 'furniture',
+    name: "Furniture",
+    slug: "furniture",
     icon: FaCouch,
   },
   {
     id: 5,
-    name: 'Sports',
-    slug: 'sports',
+    name: "Sports",
+    slug: "sports",
     icon: FaFootballBall,
   },
   {
     id: 6,
-    name: 'Real Estate',
-    slug: 'real-estate',
+    name: "Real Estate",
+    slug: "real-estate",
     icon: FaHome,
   },
-]
+];
 
 //browse catogories
 
 export const categories = [
-  { id: 1, name: 'Electronics', slug: 'electronics' },
-  { id: 2, name: 'Vehicles', slug: 'vehicles' },
-  { id: 3, name: 'Furniture', slug: 'furniture' },
-  { id: 4, name: 'Home Appliances', slug: 'home-appliances' },
-  { id: 5, name: 'Sports', slug: 'sports' },
-  { id: 6, name: 'Real Estate', slug: 'real-estate' },
-]
+  { id: 1, name: "Electronics", slug: "electronics" },
+  { id: 2, name: "Vehicles", slug: "vehicles" },
+  { id: 3, name: "Furniture", slug: "furniture" },
+  { id: 4, name: "Home Appliances", slug: "home-appliances" },
+  { id: 5, name: "Sports", slug: "sports" },
+  { id: 6, name: "Real Estate", slug: "real-estate" },
+];
 
 export const featuredListings = [
   {
     id: 1,
-    title: 'Canon EOS Camera',
+    title: "Canon EOS Camera",
     image: featuredcamera,
     priceDay: 1200,
     priceWeek: 7500,
-    location: 'Mumbai, Maharashtra',
-    owner: 'Priya Sharma',
+    location: "Mumbai, Maharashtra",
+    owner: "Priya Sharma",
     rating: 4.9,
   },
   {
     id: 2,
-    title: 'Sony Lens Kit',
+    title: "Sony Lens Kit",
     image: featuredlaptop,
     priceDay: 900,
     priceWeek: 6000,
-    location: 'Delhi, India',
-    owner: 'Arjun Mehra',
+    location: "Delhi, India",
+    owner: "Arjun Mehra",
     rating: 4.8,
   },
   {
     id: 3,
-    title: 'Nikon Prime Lens',
-    image: '/public/images/featured-camera.jpg',
+    title: "Nikon Prime Lens",
+    image: "/public/images/featured-camera.jpg",
     priceDay: 700,
     priceWeek: 5200,
-    location: 'Chandigarh',
-    owner: 'Kunal Tiwari',
+    location: "Chandigarh",
+    owner: "Kunal Tiwari",
     rating: 4.7,
   },
   {
     id: 4,
-    title: 'GoPro Hero 10',
-    image: '/public/images/featured-laptop.avif',
+    title: "GoPro Hero 10",
+    image: "/public/images/featured-laptop.avif",
     priceDay: 500,
     priceWeek: 3500,
-    location: 'Pune, India',
-    owner: 'Riya Kapoor',
+    location: "Pune, India",
+    owner: "Riya Kapoor",
     rating: 4.9,
   },
-]
+];
 
 export const chooseUsData = [
   {
     icon: faLock,
-    title: 'Secure Transactions',
-    desc: 'All payments are processed securely with complete buyer protection.',
-    iconColor: 'text-yellow-600',
+    title: "Secure Transactions",
+    desc: "All payments are processed securely with complete buyer protection.",
+    iconColor: "text-yellow-600",
   },
   {
     icon: faHandHoldingHeart,
-    title: 'Trusted Community',
-    desc: 'Every user is verified for a safer renting experience.',
-    iconColor: 'text-pink-600',
+    title: "Trusted Community",
+    desc: "Every user is verified for a safer renting experience.",
+    iconColor: "text-pink-600",
   },
   {
     icon: faShield,
-    title: 'Protection Guarantee',
-    desc: 'We protect both renters and owners with secure policies.',
-    iconColor: 'text-blue-600',
+    title: "Protection Guarantee",
+    desc: "We protect both renters and owners with secure policies.",
+    iconColor: "text-blue-600",
   },
   {
     icon: faClock,
-    title: 'Fast & Simple',
-    desc: 'Rent anything quickly without complicated steps.',
-    iconColor: 'text-green-600',
+    title: "Fast & Simple",
+    desc: "Rent anything quickly without complicated steps.",
+    iconColor: "text-green-600",
   },
-]
+];
 
 export const filtercategories = [
-  'All Categories',
-  'Electronics',
-  'Tools',
-  'Cameras',
-  'Vehicles',
-  'Furniture',
-  'Party Items',
-]
+  "All Categories",
+  "Electronics",
+  "Tools",
+  "Cameras",
+  "Vehicles",
+  "Furniture",
+  "Party Items",
+];
 
 export const cities = [
-  '',
-  'Mumbai, Maharashtra',
-  'Bangalore, Karnataka',
-  'Delhi, NCR',
-  'Hyderabad, Telangana',
-  'Chennai, Tamil Nadu',
-]
+  "",
+  "Mumbai, Maharashtra",
+  "Bangalore, Karnataka",
+  "Delhi, NCR",
+  "Hyderabad, Telangana",
+  "Chennai, Tamil Nadu",
+];
 
-export const conditions = ['All', 'New', 'Like New', 'Used', 'Heavily Used']
+export const conditions = ["All", "New", "Like New", "Used", "Heavily Used"];
 
 export const priceRanges = [
-  { label: 'Any', min: 0, max: 999999 },
-  { label: 'Below 500', min: 0, max: 500 },
-  { label: '500 – 2000', min: 500, max: 2000 },
-  { label: '2000 – 5000', min: 2000, max: 5000 },
-  { label: 'Above 5000', min: 5000, max: 999999 },
-]
+  { label: "Any", min: 0, max: 999999 },
+  { label: "Below 500", min: 0, max: 500 },
+  { label: "500 – 2000", min: 500, max: 2000 },
+  { label: "2000 – 5000", min: 2000, max: 5000 },
+  { label: "Above 5000", min: 5000, max: 999999 },
+];
 
 export const categoriesProducts = [
   {
     id: 1,
-    name: 'Canon EOS 1500D DSLR',
+    name: "Canon EOS 1500D DSLR",
     price: 800,
-    city: 'Mumbai, Maharashtra',
+    city: "Mumbai, Maharashtra",
     rating: 4.7,
-    condition: 'Like New',
-    image: '/images/canon.jpg', // put images in public/images
+    condition: "Like New",
+    image: "/images/canon.jpg", // put images in public/images
   },
   {
     id: 2,
-    name: 'Portable Generator 2kW',
+    name: "Portable Generator 2kW",
     price: 600,
-    city: 'Delhi, NCR',
+    city: "Delhi, NCR",
     rating: 4.5,
-    condition: 'Used',
-    image: '/images/generator.jpg',
+    condition: "Used",
+    image: "/images/generator.jpg",
   },
   {
     id: 3,
-    name: 'Nikon D5600 DSLR',
+    name: "Nikon D5600 DSLR",
     price: 950,
-    city: 'Bangalore, Karnataka',
+    city: "Bangalore, Karnataka",
     rating: 4.8,
-    condition: 'New',
-    image: '/images/nikon.jpg',
+    condition: "New",
+    image: "/images/nikon.jpg",
   },
   {
     id: 4,
-    name: 'DJI Mini Drone',
+    name: "DJI Mini Drone",
     price: 1200,
-    city: 'Hyderabad, Telangana',
+    city: "Hyderabad, Telangana",
     rating: 4.9,
-    condition: 'Like New',
-    image: '',
+    condition: "Like New",
+    image: "",
   },
   {
     id: 5,
-    name: 'Electric Drill Machine',
+    name: "Electric Drill Machine",
     price: 350,
-    city: 'Chennai, Tamil Nadu',
+    city: "Chennai, Tamil Nadu",
     rating: 4.3,
-    condition: 'Used',
-    image: '/images/drill.jpg',
+    condition: "Used",
+    image: "/images/drill.jpg",
   },
   {
     id: 6,
-    name: 'Canon 50mm Lens',
+    name: "Canon 50mm Lens",
     price: 450,
-    city: 'Pune, Maharashtra',
+    city: "Pune, Maharashtra",
     rating: 4.6,
-    condition: 'New',
+    condition: "New",
     image: { featuredcamera },
   },
-]
+];
 
 export const aboutHighlights = [
   {
@@ -360,8 +400,7 @@ export const safetyTips = [
 
 export const safetyPromise = {
   title: "Rentify Safety Promise",
-  text:
-    "Your trust matters. Rentify ensures identity verification, secure payments, digital agreements, and customer support to protect both renters and owners.",
+  text: "Your trust matters. Rentify ensures identity verification, secure payments, digital agreements, and customer support to protect both renters and owners.",
 };
 
 export const trustSafetyFeatures = [
@@ -411,8 +450,64 @@ export const trustSafetyFeatures = [
 
 export const trustStatement = {
   title: "Your Trust Is Our Priority",
-  text:
-    "Rentify is built on transparency, accountability, and security. Every rental is backed by verification, protection, and support.",
+  text: "Rentify is built on transparency, accountability, and security. Every rental is backed by verification, protection, and support.",
 };
 
+export const productDetails = {
+  id: 1,
+  title: "Canon EOS R5 Professional Camera",
+  priceDay: 1200,
+  priceWeek: 7500,
+  priceMonth: 25000,
+  rating: 4.9,
+  reviews: 47,
+  location: "Bandra West, Mumbai, Maharashtra",
+  images: [featuredcamera, featuredlaptop, "/images/camera3.jpg"],
+  owner: {
+    name: "Priya Sharma",
+    city: "Mumbai",
+    memberSince: "2023",
+    rating: 4.9,
+  },
+  description: `Professional Canon EOS R5 camera available for rent. 
+Perfect for photographers, videographers, and content creators.`,
+  specs: [
+    "45MP Full-Frame CMOS Sensor",
+    "8K RAW Video Recording",
+    "Dual Pixel CMOS AF II",
+    "In-Body Image Stabilization",
+    "3.2” Vari-Angle Touchscreen",
+  ],
+  safetyNote:
+    "Meet in a public place, verify item condition before renting, and always use Rentify's secure payment system.",
+};
 
+export const icons = {
+  shield: FaShieldAlt,
+  location: FaMapMarkerAlt,
+  star: FaStar,
+};
+export const chats = [
+  {
+    id: 1,
+    user: "Ali Raza",
+    lastMessage: "Is the camera available tomorrow?",
+    avatar: FaUserCircle,
+    messages: [
+      { from: "them", text: "Hi, is the camera available?" },
+      { from: "me", text: "Yes, it is available." },
+      { from: "them", text: "Is the camera available tomorrow?" },
+    ],
+  },
+  {
+    id: 2,
+    user: "Hamza Khan",
+    lastMessage: "Price negotiable?",
+    avatar: FaUserCircle,
+    messages: [
+      { from: "them", text: "Hello!" },
+      { from: "me", text: "Hi, how can I help?" },
+      { from: "them", text: "Price negotiable?" },
+    ],
+  },
+];

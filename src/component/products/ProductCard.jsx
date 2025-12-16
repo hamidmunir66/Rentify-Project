@@ -6,7 +6,7 @@ export default function ProductCard({ item }) {
   return (
     <>
       <Link
-        to="#"
+        to="/product/:id"
         className="group block bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-[0_6px_20px_rgba(13,38,76,0.06)] hover:shadow-[0_12px_40px_rgba(13,38,76,0.12)] transition-transform transform hover:-translate-y-1"
       >
         <div className="h-56 w-full overflow-hidden bg-gray-100">
@@ -25,7 +25,7 @@ export default function ProductCard({ item }) {
           <div className="flex items-center justify-between">
             <div>
               <div className="text-blue-600 font-bold text-lg">
-                ₹{item.price}
+                ${item.price}
               </div>
               <div className="flex items-center gap-2 text-gray-600 text-sm mt-2">
                 <FaLocationDot className="text-blue-600" />

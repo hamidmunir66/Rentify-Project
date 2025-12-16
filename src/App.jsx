@@ -16,16 +16,15 @@ import MarketplacePage from "./pages/user/MarketPlacePage";
 import HowItWorks from "./pages/user/HowItWorks";
 import SafetyTips from "./pages/user/SafetyTips";
 import TrustSafety from "./pages/user/TrustSafety";
+import ProductDetails from "./pages/user/ProductDetails";
+import ChatPage from "./pages/chat/ChatPage";
 
 const App = () => {
   return (
     <div>
       <Routes>
         {/* ========== PUBLIC / AUTH ROUTES ========== */}
-        <Route path="/about" element={<About />} />
-        <Route path="/howitworks" element={<HowItWorks />} />
-        <Route path="/safetytips" element={<SafetyTips />} />
-        <Route path="/trust&safety" element={<TrustSafety />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/account-type" element={<AccountType />} />
         <Route path="/signup/user" element={<UserSignup />} />
@@ -35,7 +34,13 @@ const App = () => {
 
         <Route element={<UserLayout />}>
           <Route path="/" element={<UserHome />} />
-          <Route path="/marketplace" element={<MarketplacePage />} />
+          <Route path="/market-place" element={<MarketplacePage />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/safety-tips" element={<SafetyTips />} />
+          <Route path="/trust-safety" element={<TrustSafety />} />
+          <Route path="/chat" element={<ChatPage />} />
         </Route>
       </Routes>
     </div>

@@ -15,12 +15,12 @@ const About = () => {
 
   return (
     <>
-    <Navbar/>
+    
     <div className="min-h-screen bg-white px-6 py-16">
       <div className="max-w-6xl mx-auto space-y-20">
 
         <section className="text-center space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
+          <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-cyan-500">
             About Rentify
           </h1>
           <p className="max-w-3xl mx-auto text-gray-600 text-lg">
@@ -53,7 +53,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100 shadow-xl">
+          <div className="bg-linear-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100 shadow-xl">
             <h3 className="text-2xl font-semibold mb-6 text-gray-900">
               Why Rentify?
             </h3>
@@ -78,7 +78,7 @@ const About = () => {
           </p>
         </section>
 
-        <section className="text-center bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-12 shadow-2xl text-white">
+        <section className="text-center bg-linear-to-r from-blue-600 to-cyan-500 rounded-3xl p-12 shadow-2xl text-white">
           <h2 className="text-3xl font-bold mb-4">
             Rent Smart. Earn More. Live Better.
           </h2>
@@ -89,7 +89,7 @@ const About = () => {
 
       </div>
     </div>
-    <Footer/>
+    
     </>
   );
 };

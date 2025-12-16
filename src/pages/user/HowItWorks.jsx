@@ -7,11 +7,11 @@ import Footer from "../../component/common/Footer";
 const HowItWorks = () => {
   return (
     <>
-    <Navbar/>
+    
       <div className="min-h-screen bg-white px-6 py-20">
         <div className="max-w-7xl mx-auto space-y-22">
           <section className="text-center space-y-8">
-            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
+            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-cyan-500">
               How Rentify Works
             </h1>
             <p className="max-w-3xl mx-auto text-gray-600 text-lg">
@@ -26,7 +26,7 @@ const HowItWorks = () => {
             ))}
           </section>
 
-          <section className="text-center bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-14 shadow-2xl text-white">
+          <section className="text-center bg-linear-to-r from-blue-600 to-cyan-500 rounded-3xl p-14 shadow-2xl text-white">
             <h2 className="text-3xl font-bold mb-4">
               Start Renting Smarter Today
             </h2>
@@ -37,7 +37,7 @@ const HowItWorks = () => {
           </section>
         </div>
       </div>
-      <Footer/>
+      
     </>
   );
 };

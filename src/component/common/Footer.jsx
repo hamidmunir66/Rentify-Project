@@ -58,17 +58,26 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/howitworks" className="hover:text-white transition">
+                  <Link
+                    to="/how-it-works"
+                    className="hover:text-white transition"
+                  >
                     How It Works
                   </Link>
                 </li>
                 <li>
-                  <Link to="/safetytips" className="hover:text-white transition">
+                  <Link
+                    to="/safety-tips"
+                    className="hover:text-white transition"
+                  >
                     Safety Tips
                   </Link>
                 </li>
                 <li>
-                  <Link to="/trust&safety" className="hover:text-white transition">
+                  <Link
+                    to="/trust-safety"
+                    className="hover:text-white transition"
+                  >
                     Trust & Safety
                   </Link>
                 </li>
@@ -79,22 +88,34 @@ const Footer = () => {
               <h3 className="text-lg font-semibold">Categories</h3>
               <ul className="space-y-2 text-slate-300">
                 <li>
-                  <Link to="#" className="hover:text-white transition">
+                  <Link
+                    to="/market-place"
+                    className="hover:text-white transition"
+                  >
                     Electronics
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:text-white transition">
+                  <Link
+                    to="/market-place"
+                    className="hover:text-white transition"
+                  >
                     Vehicles
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:text-white transition">
+                  <Link
+                    to="/market-place"
+                    className="hover:text-white transition"
+                  >
                     Cameras
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:text-white transition">
+                  <Link
+                    to="/market-place"
+                    className="hover:text-white transition"
+                  >
                     Tools
                   </Link>
                 </li>
