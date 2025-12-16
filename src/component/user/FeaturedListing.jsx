@@ -5,7 +5,7 @@ import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons/faArrowCir
 import { featuredListings } from "../../data/data";
 import { Link } from "react-router-dom";
 
-const FeaturdListing = () => {
+const FeaturedListing = () => {
   return (
     <div className="px-8 py-16 bg-gray-50">
       <div className="flex flex-col mb-8 justify-center">
@@ -73,4 +73,4 @@ const FeaturdListing = () => {
   );
 };
 
-export default FeaturdListing;
+export default FeaturedListing;

@@ -18,6 +18,8 @@ import SafetyTips from "./pages/user/SafetyTips";
 import TrustSafety from "./pages/user/TrustSafety";
 import ProductDetails from "./pages/user/ProductDetails";
 import ChatPage from "./pages/chat/ChatPage";
+import MerchantLayout from "./layout/MerchantLayout";
+import MerchantHome from "./pages/merchant/MerchantHome";
 
 const App = () => {
   return (
@@ -32,7 +34,7 @@ const App = () => {
 
         {/* ========== USER LAYOUT ROUTES ========== */}
 
-        <Route element={<UserLayout />}>
+        {/* <Route element={<UserLayout />}>
           <Route path="/" element={<UserHome />} />
           <Route path="/market-place" element={<MarketplacePage />} />
           <Route path="/product/:id" element={<ProductDetails />} />
@@ -41,6 +43,14 @@ const App = () => {
           <Route path="/safety-tips" element={<SafetyTips />} />
           <Route path="/trust-safety" element={<TrustSafety />} />
           <Route path="/chat" element={<ChatPage />} />
+        </Route> */}
+
+        <Route element={<MerchantLayout />}>
+          <Route path="/" element={<MerchantHome />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/safety-tips" element={<SafetyTips />} />
+          <Route path="/trust-safety" element={<TrustSafety />} />
         </Route>
       </Routes>
     </div>

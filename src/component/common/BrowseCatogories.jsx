@@ -16,7 +16,7 @@ const BrowseCategories = () => {
         {browseCategories.map((cat) => {
           const Icon = cat.icon;
           return (
-            <Link to={`/marketplace?category=${cat.slug}`} key={cat.id}>
+            <Link to={`/market-place?category=${cat.slug}`} key={cat.id}>
               <div className="w-52 h-48 bg-white border border-gray-200 rounded-2xl flex flex-col items-center justify-center shadow-sm cursor-pointer transition-all duration-200 hover:bg-blue-600 hover:text-white">
                 <div className="bg-gray-50 py-4 px-4 rounded-xl mt-4">
                   <Icon className="text-4xl p-1 text-blue-600" />
