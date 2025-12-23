@@ -3,14 +3,20 @@ import {
   faHandHoldingHeart,
   faShield,
   faClock,
+  FiGrid,
+  FiUsers,
+  FiBriefcase,
+  FiBox,
+  FiCreditCard,
+  FiSettings
 } from "@fortawesome/free-solid-svg-icons";
 import featuredcamera from "../assets/images/featured-camera.jpg";
 import featuredlaptop from "../assets/images/featured-laptop.avif";
-import heroslide1 from '../assets/images/heroslide1.jpg'
-import heroslide2 from '../assets/images/heroslide2.jpg'
-import heroslide3 from '../assets/images/heroslide3.jpg'
-import heroslide4 from '../assets/images/heroslide4.jpg'
-import heroslide5 from '../assets/images/heroslide5.avif'
+import heroslide1 from "../assets/images/heroslide1.jpg";
+import heroslide2 from "../assets/images/heroslide2.jpg";
+import heroslide3 from "../assets/images/heroslide3.jpg";
+import heroslide4 from "../assets/images/heroslide4.jpg";
+import heroslide5 from "../assets/images/heroslide5.avif";
 import {
   FaUserCheck,
   FaLock,
@@ -66,7 +72,6 @@ const heroSlides = [
 ];
 
 export default heroSlides;
-
 
 export const browseCategories = [
   {
@@ -511,3 +516,121 @@ export const chats = [
     ],
   },
 ];
+
+export const merchantListings = [
+  {
+    id: 1,
+    title: "Canon DSLR Camera",
+    image: "/images/camera.jpg",
+    priceDay: 25,
+    priceWeek: 150,
+    location: "Lahore",
+    status: "Active",
+  },
+  {
+    id: 2,
+    title: "Honda Generator",
+    image: "/images/generator.jpg",
+    priceDay: 40,
+    priceWeek: 250,
+    location: "Islamabad",
+    status: "Rented",
+  },
+];
+export const statusColor = {
+  Active: "bg-green-100 text-green-700",
+  Rented: "bg-yellow-100 text-yellow-700",
+  Pending: "bg-blue-100 text-blue-700",
+};
+
+export const merchantStats = {
+  totalListings: 12,
+  activeListings: 5,
+  rentedListings: 4,
+  availableListings: 3,
+};
+
+export const merchantEarnings = {
+  today: 2100,
+  week: 9800,
+  month: 32400,
+};
+
+export const merchantNotifications = [
+  {
+    id: 1,
+    text: "Canon DSLR rented for 3 days",
+  },
+  {
+    id: 2,
+    text: "Payment received ₹2,400",
+  },
+  {
+    id: 3,
+    text: "Generator returned successfully",
+  },
+];
+
+export const merchantReviews = [
+  {
+    id: 1,
+    product: "Canon DSLR",
+    rating: 5,
+    comment: "Item was clean and well maintained",
+  },
+  {
+    id: 2,
+    product: "DJI Drone",
+    rating: 4,
+    comment: "Good experience, smooth rental",
+  },
+];
+
+export const rentalRequests = [
+  {
+    id: 1,
+    user: "Ali Khan",
+    product: "Canon DSLR Camera",
+    days: 3,
+  },
+  {
+    id: 2,
+    user: "Ahmed Raza",
+    product: "Honda Generator",
+    days: 5,
+  },
+  {
+    id: 3,
+    user: "Sara Malik",
+    product: "Projector HD",
+    days: 2,
+  },
+];
+export const users = [
+  {
+    name: "Ali Khan",
+    email: "ali@gmail.com",
+    status: "Active",
+    joined: "2024-01-12"
+  },
+  {
+    name: "Sara Ahmed",
+    email: "sara@gmail.com",
+    status: "Blocked",
+    joined: "2024-02-05"
+  }
+]
+export const stats = [
+    { label: "Total Users", value: "2,431" },
+    { label: "Merchants", value: "312" },
+    { label: "Active Listings", value: "1,284" },
+    { label: "Revenue", value: "₹ 1.2M" },
+  ]
+export const menu = [
+  { name: "Dashboard", icon: FiGrid, path: "/admin" },
+  { name: "Users", icon: FiUsers, path: "/admin/users" },
+  { name: "Merchants", icon: FiBriefcase, path: "/admin/merchants" },
+  { name: "Listings", icon: FiBox, path: "/admin/listings" },
+  { name: "Transactions", icon: FiCreditCard, path: "/admin/transactions" },
+  { name: "Settings", icon: FiSettings, path: "/admin/settings" }
+]

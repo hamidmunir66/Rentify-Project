@@ -27,7 +27,7 @@ const MerchantHero = () => {
 
         <div className="flex flex-wrap gap-5">
           <Link
-            to="/merchant/add-item"
+            to="/merchant/add-listing"
             className="flex items-center gap-3 bg-linear-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-2xl font-semibold text-lg shadow-[0_15px_40px_rgba(59,130,246,0.4)] hover:scale-[1.03] transition-transform"
           >
             <FontAwesomeIcon icon={faPlusCircle} />

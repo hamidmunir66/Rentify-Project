@@ -7,6 +7,7 @@ import {
   FiUser,
   FiPlusCircle,
   FiGrid,
+  FiClipboard,
 } from "react-icons/fi";
 
 const MerchantNavbar = () => {
@@ -19,13 +20,13 @@ const MerchantNavbar = () => {
           {/* LEFT */}
           <div className="flex items-center gap-3">
             <Link
-              to="/"
+              to="/merchant"
               className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-md text-white font-bold text-lg"
             >
               R
             </Link>
             <Link
-              to="/"
+              to="/merchant"
               className="text-2xl font-extrabold tracking-tight"
             >
               Rentify
@@ -50,12 +51,19 @@ const MerchantNavbar = () => {
               <FiInbox />
               Messages
             </Link>
+            <Link
+              to="/merchant/dashboard?tab=requests"
+              className="flex items-center gap-2 font-medium text-gray-700 hover:text-blue-600 transition"
+            >
+              <FiClipboard />
+              Requests
+            </Link>
           </div>
 
           {/* RIGHT */}
           <div className="hidden md:flex items-center gap-6">
             <Link
-              to="/merchant/add-item"
+              to="/merchant/add-listing"
               className="flex items-center gap-2 px-6 py-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold shadow-[0_8px_30px_rgba(59,130,246,0.35)] hover:scale-[1.03] transition-transform"
             >
               <FiPlusCircle className="text-xl" />
@@ -103,7 +111,7 @@ const MerchantNavbar = () => {
           </Link>
 
           <Link
-            to="/merchant/add-item"
+            to="/merchant/add-lisitng"
             onClick={() => setOpenMobileMenu(false)}
             className="block mt-4 py-3 bg-blue-600 text-white text-center rounded-xl font-semibold"
           >
