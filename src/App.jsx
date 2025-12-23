@@ -24,6 +24,7 @@ import AddListing from "./pages/merchant/AddListing";
 import MerchantDashboard from "./pages/merchant/MerchantDashboard";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminLayout from "./layout/AdminLayout";
+import ForgotPassword from "./pages/auth/ForgotPassword";
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/account-type" element={<AccountType />} />
         <Route path="/signup/user" element={<UserSignup />} />
         <Route path="/signup/merchant" element={<MerchantSignup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
         {/* ========== USER LAYOUT ROUTES ========== */}
 
@@ -60,7 +62,7 @@ const App = () => {
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminDashboard/>} />
+          <Route index element={<AdminDashboard />} />
         </Route>
       </Routes>
     </div>

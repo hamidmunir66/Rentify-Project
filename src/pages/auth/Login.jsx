@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock, faEye } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
@@ -6,6 +6,53 @@ import { Link } from "react-router-dom";
 import loginsideimage from "../../assets/images/3d-login.webp";
 
 const Login = () => {
+  const [form, setform] = useState({
+    email: "",
+    password: "",
+  });
+  const [errors, seterrors] = useState({});
+
+  const handleChange = (e) => {
+    setform({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+
+    seterrors({
+      ...errors,
+      [e.target.name]: "",
+    });
+  };
+  const validate = () => {
+    let newErrors = {};
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      newErrors.email = "Invalid email address";
+    }
+
+    if (!form.password.trim()) {
+      newErrors.password = "Password is required";
+    } else {
+      const password = form.password.trim();
+      const regex =
+        /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
+
+      if (!regex.test(password)) {
+        newErrors.password =
+          "Password must be at least 8 characters, include one uppercase letter and one special character";
+      }
+    }
+    seterrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    console.log("Validated Data:", form);
+  };
   return (
     <>
       <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-  [#dce7ff] via-[#eef3ff] to-[#dce7ff] px-4 overflow-hidden relative">
@@ -46,52 +93,83 @@ const Login = () => {
             <p className="text-slate-500 mb-8">
               To access your rentals and listings
             </p>
-
-            <div className="mb-5">
-              <label className="text-slate-700 font-medium">
-                Email Address
-              </label>
-              <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm focus-within:border-blue-500 focus-within:shadow-blue-200 focus-within:shadow-md transition">
-                <FontAwesomeIcon icon={faEnvelope} className="text-slate-500" />
-                <input
-                  type="email"
-                  placeholder="you@example.com"
-                  className="w-full bg-transparent outline-none text-slate-700"
-                />
+            <form onSubmit={handleSubmit}>
+              <div className="mb-5">
+                <label className="text-slate-700 font-medium">
+                  Email Address
+                </label>
+                <div
+                  className={`flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm focus-within:border-blue-500 focus-within:shadow-blue-200 focus-within:shadow-md transition ${
+                    errors.email ? "border-red-500" : "border-slate-200"
+                  }`}
+                >
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    className="text-slate-500"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    value={form.email}
+                    placeholder="you@example.com"
+                    className="w-full bg-transparent outline-none text-slate-700"
+                  />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
               </div>
-            </div>
 
-            <div className="mb-5">
-              <label className="text-slate-700 font-medium">Password</label>
-              <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm focus-within:border-blue-500 focus-within:shadow-blue-200 focus-within:shadow-md transition">
-                <FontAwesomeIcon icon={faLock} className="text-slate-500" />
-                <input
-                  type="password"
-                  placeholder="Enter your password"
-                  className="w-full bg-transparent outline-none text-slate-700"
-                />
-                <FontAwesomeIcon
-                  icon={faEye}
-                  className="text-slate-500 cursor-pointer"
-                />
+              <div className="mb-5">
+                <label className="text-slate-700 font-medium">Password</label>
+                <div
+                  className={`flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm focus-within:border-blue-500 focus-within:shadow-blue-200 focus-within:shadow-md transition ${
+                    errors.password ? "border-red-500" : "border-slate-200"
+                  }`}
+                >
+                  <FontAwesomeIcon icon={faLock} className="text-slate-500" />
+                  <input
+                    type="password"
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
+                    placeholder="Enter your password"
+                    className="w-full bg-transparent outline-none text-slate-700"
+                  />
+                  {errors.password && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.password}
+                    </p>
+                  )}
+                  <FontAwesomeIcon
+                    icon={faEye}
+                    className="text-slate-500 cursor-pointer"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="flex justify-between items-center mb-6">
-              <div className="flex items-center gap-2">
-                <input type="checkbox" className="h-4 w-4" />
-                <span className="text-slate-600 text-sm">Remember me</span>
+              <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" className="h-4 w-4" />
+                  <span className="text-slate-600 text-sm">Remember me</span>
+                </div>
+                <Link
+                  to="/forgot-password"
+                  className="text-blue-600 text-sm hover:underline"
+                >
+                  Forgot password?
+                </Link>
               </div>
-              <a className="text-blue-600 text-sm hover:underline cursor-pointer">
-                Forgot password?
-              </a>
-            </div>
 
-            {/* Login Button */}
-            <button className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-300 hover:shadow-blue-400 transition">
-              Log In
-            </button>
-
+              {/* Login Button */}
+              <button
+                type="submit"
+                className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-300 hover:shadow-blue-400 transition"
+              >
+                Log In
+              </button>
+            </form>
             <div className="my-6 flex items-center gap-4">
               <div className="h-px flex-1 bg-slate-300"></div>
               <span className="text-slate-500">Or continue with</span>

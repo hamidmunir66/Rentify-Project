@@ -3,12 +3,6 @@ import {
   faHandHoldingHeart,
   faShield,
   faClock,
-  FiGrid,
-  FiUsers,
-  FiBriefcase,
-  FiBox,
-  FiCreditCard,
-  FiSettings
 } from "@fortawesome/free-solid-svg-icons";
 import featuredcamera from "../assets/images/featured-camera.jpg";
 import featuredlaptop from "../assets/images/featured-laptop.avif";
@@ -47,6 +41,14 @@ import {
   FaHome,
   FaUserCircle,
 } from "react-icons/fa";
+import {
+  FiGrid,
+  FiUsers,
+  FiBriefcase,
+  FiBox,
+  FiCreditCard,
+  FiSettings,
+} from "react-icons/fi";
 
 const heroSlides = [
   {
@@ -611,26 +613,26 @@ export const users = [
     name: "Ali Khan",
     email: "ali@gmail.com",
     status: "Active",
-    joined: "2024-01-12"
+    joined: "2024-01-12",
   },
   {
     name: "Sara Ahmed",
     email: "sara@gmail.com",
     status: "Blocked",
-    joined: "2024-02-05"
-  }
-]
+    joined: "2024-02-05",
+  },
+];
 export const stats = [
-    { label: "Total Users", value: "2,431" },
-    { label: "Merchants", value: "312" },
-    { label: "Active Listings", value: "1,284" },
-    { label: "Revenue", value: "₹ 1.2M" },
-  ]
+  { label: "Total Users", value: "2,431" },
+  { label: "Merchants", value: "312" },
+  { label: "Active Listings", value: "1,284" },
+  { label: "Revenue", value: "₹ 1.2M" },
+];
 export const menu = [
   { name: "Dashboard", icon: FiGrid, path: "/admin" },
   { name: "Users", icon: FiUsers, path: "/admin/users" },
   { name: "Merchants", icon: FiBriefcase, path: "/admin/merchants" },
   { name: "Listings", icon: FiBox, path: "/admin/listings" },
   { name: "Transactions", icon: FiCreditCard, path: "/admin/transactions" },
-  { name: "Settings", icon: FiSettings, path: "/admin/settings" }
-]
+  { name: "Settings", icon: FiSettings, path: "/admin/settings" },
+];

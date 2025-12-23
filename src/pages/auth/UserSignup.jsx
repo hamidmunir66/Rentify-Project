@@ -1,10 +1,96 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faUser,faEnvelope,faPhone,faLocationDot,faIdCard,faLock,} from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faEnvelope,
+  faPhone,
+  faLocationDot,
+  faIdCard,
+  faLock,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import signupsideimage from "../../assets/images/3d-signup.webp";
 
 const UserSignup = () => {
+  const [formdata, setformdata] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    cnic: "",
+    location: "",
+    password: "",
+  });
+  const [errors, seterrors] = useState({});
+
+  const handleChange = (e) => {
+    setformdata({
+      ...formdata,
+      [e.target.name]: e.target.value,
+    });
+
+    seterrors({
+      ...errors,
+      [e.target.name]: "",
+    });
+  };
+
+  const validate = () => {
+    let newErrors = {};
+
+    if (!formdata.fullName.trim()) {
+      newErrors.fullName = "Name is required";
+    } else if (formdata.fullName.trim().length < 3) {
+      newErrors.fullName = "Name must be at least 3 characters";
+    }
+    if (!formdata.password.trim()) {
+      newErrors.password = "Password is required";
+    } else {
+      const password = formdata.password.trim();
+      const regex =
+        /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
+
+      if (!regex.test(password)) {
+        newErrors.password =
+          "Password must be at least 8 characters, include one uppercase letter and one special character";
+      }
+    }
+
+    if (!formdata.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formdata.email)) {
+      newErrors.email = "Invalid email address";
+    }
+
+    if (!formdata.phone.trim()) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^\d{11}$/.test(formdata.phone)) {
+      newErrors.phone = "Phone must be 11 digits";
+    }
+
+    if (!formdata.cnic.trim()) {
+      newErrors.cnic = "CNIC is required";
+    } else {
+      const cnicRegex = /^\d{5}-\d{7}-\d{1}$/;
+      if (!cnicRegex.test(formdata.cnic.trim())) {
+        newErrors.cnic = "CNIC must be in the format XXXXX-XXXXXXX-X";
+      }
+    }
+
+    if (!formdata.location.trim()) {
+      newErrors.location = "Location is required";
+    }
+
+    seterrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    console.log("Validated Data:", formdata);
+  };
+
   return (
     <>
       <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-[#dce7ff] via-[#eef3ff] to-[#dce7ff] px-4 overflow-hidden relative">
@@ -43,100 +129,183 @@ const UserSignup = () => {
               User Sign Up
             </h2>
             <p className="text-slate-500 mb-8">Create your personal account</p>
-
-            <div className="space-y-5">
-              <div>
-                <label className="text-slate-700 font-medium">Full Name</label>
-                <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm focus-within:border-blue-500 transition">
-                  <FontAwesomeIcon icon={faUser} className="text-slate-500" />
-                  <input
-                    type="text"
-                    placeholder="John Doe"
-                    className="w-full bg-transparent outline-none text-slate-700"
-                  />
+            {/* Form Data*/}
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-5">
+                <div>
+                  <label className="text-slate-700 font-medium">
+                    Full Name
+                  </label>
+                  <div
+                    className={`flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border shadow-sm focus-within:border-blue-500 transition ${
+                      errors.fullName ? "border-red-500" : "border-slate-200"
+                    }`}
+                  >
+                    <FontAwesomeIcon icon={faUser} className="text-slate-500" />
+                    <input
+                      type="text"
+                      name="fullName"
+                      placeholder="Hamid Munir"
+                      value={formdata.fullName}
+                      onChange={handleChange}
+                      className="w-full bg-transparent outline-none text-slate-700 "
+                    />
+                    {errors.fullName && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.fullName}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="text-slate-700 font-medium">Email</label>
-                <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm">
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    className="text-slate-500"
-                  />
-                  <input
-                    type="email"
-                    placeholder="you@example.com"
-                    className="w-full bg-transparent outline-none text-slate-700"
-                  />
+                <div>
+                  <label className="text-slate-700 font-medium">Email</label>
+                  <div
+                    className={`flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border shadow-sm ${
+                      errors.email ? "border-red-500" : "border-slate-200"
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="text-slate-500"
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="hamid@gmail.com"
+                      value={formdata.email}
+                      onChange={handleChange}
+                      className="w-full bg-transparent outline-none text-slate-700 "
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="text-slate-700 font-medium">Phone</label>
-                <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm">
-                  <FontAwesomeIcon icon={faPhone} className="text-slate-500" />
-                  <input
-                    type="text"
-                    placeholder="03XX-XXXXXXX"
-                    className="w-full bg-transparent outline-none text-slate-700"
-                  />
+                <div>
+                  <label className="text-slate-700 font-medium">Phone</label>
+                  <div
+                    className={`flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border shadow-sm ${
+                      errors.phone ? "border-red-500" : "border-slate-200"
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      icon={faPhone}
+                      className="text-slate-500"
+                    />
+                    <input
+                      type="text"
+                      name="phone"
+                      placeholder="03XX-XXXXXXX"
+                      value={formdata.phone}
+                      onChange={handleChange}
+                      className="w-full bg-transparent outline-none text-slate-700 "
+                    />
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.phone}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="text-slate-700 font-medium">CNIC</label>
-                <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm">
-                  <FontAwesomeIcon icon={faIdCard} className="text-slate-500" />
-                  <input
-                    type="text"
-                    placeholder="35202-XXXXXXX-X"
-                    className="w-full bg-transparent outline-none text-slate-700"
-                  />
+                <div>
+                  <label className="text-slate-700 font-medium">CNIC</label>
+                  <div
+                    className={`flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border shadow-sm ${
+                      errors.cnic ? "border-red-500" : "border-slate-200"
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      icon={faIdCard}
+                      className="text-slate-500"
+                    />
+                    <input
+                      type="text"
+                      name="cnic"
+                      placeholder="35202-XXXXXXX-X"
+                      value={formdata.cnic}
+                      onChange={handleChange}
+                      className="w-full bg-transparent outline-none text-slate-700 "
+                    />
+                    {errors.cnic && (
+                      <p className="text-red-500 text-sm mt-1">{errors.cnic}</p>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="text-slate-700 font-medium">Location</label>
-                <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm">
-                  <FontAwesomeIcon
-                    icon={faLocationDot}
-                    className="text-slate-500"
-                  />
-                  <input
-                    type="text"
-                    placeholder="City / Area"
-                    className="w-full bg-transparent outline-none text-slate-700"
-                  />
+                <div>
+                  <label className="text-slate-700 font-medium">Location</label>
+                  <div
+                    className={`flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border shadow-sm ${
+                      errors.location ? "border-red-500" : "border-slate-200"
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      icon={faLocationDot}
+                      className="text-slate-500"
+                    />
+                    <input
+                      type="text"
+                      name="location"
+                      placeholder="City / Area"
+                      value={formdata.location}
+                      onChange={handleChange}
+                      className="w-full bg-transparent outline-none text-slate-700"
+                    />
+                    {errors.location && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.location}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="text-slate-700 font-medium">Password</label>
-                <div className="flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border border-slate-200 shadow-sm">
-                  <FontAwesomeIcon icon={faLock} className="text-slate-500" />
-                  <input
-                    type="password"
-                    placeholder="Enter password"
-                    className="w-full bg-transparent outline-none text-slate-700"
-                  />
+                <div>
+                  <label className="text-slate-700 font-medium">Password</label>
+                  <div
+                    className={`flex items-center gap-3 mt-2 px-4 py-3 rounded-lg bg-white border shadow-sm ${
+                      errors.password ? "border-red-500" : "border-slate-200"
+                    }`}
+                  >
+                    <FontAwesomeIcon icon={faLock} className="text-slate-500" />
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Enter password"
+                      value={formdata.password}
+                      onChange={handleChange}
+                      className="w-full bg-transparent outline-none text-slate-700"
+                    />
+                    {errors.password && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.password}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              <button className="w-full py-3 mt-4 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-300 transition">
-                Create Account
-              </button>
-
-              <p className="text-center text-slate-600 mt-6">
-                Already have an account?{" "}
-                <Link
-                  to="/login"
-                  className="text-blue-600 font-medium hover:underline"
+                <button
+                  type="submit"
+                  className="w-full py-3 mt-4 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-300 transition"
                 >
-                  Login
-                </Link>
-              </p>
-            </div>
+                  Create Account
+                </button>
+
+                <p className="text-center text-slate-600 mt-6">
+                  Already have an account?{" "}
+                  <Link
+                    to="/login"
+                    className="text-blue-600 font-medium hover:underline"
+                  >
+                    Login
+                  </Link>
+                </p>
+              </div>
+            </form>
           </div>
         </div>
       </div>
